@@ -7,7 +7,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("== motivation 앱 실행 ==");
+        Scanner sc = new Scanner(System.in);
+
+        new App(sc).run();
+
+        sc.close();
 
         }
     }
