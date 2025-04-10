@@ -1,4 +1,6 @@
-package com.example;
+package org.project;
+
+import org.wiseSaying.entity.WiseSaying;
 
 import java.util.*;
 
