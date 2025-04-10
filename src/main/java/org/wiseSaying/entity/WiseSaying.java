@@ -35,4 +35,3 @@ public class WiseSaying {
         this.person = person;
     }
 }
-
