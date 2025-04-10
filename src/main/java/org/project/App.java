@@ -16,7 +16,16 @@ public class App {
         while (true) {
             System.out.print("명령어) ");
             String cmd = Container.getScanner().nextLine().trim();
-            if (cmd.equals("add")) {
+            if (cmd.startsWith("delete")) {
+                Rq rq = new Rq(cmd);
+
+                System.out.println(rq.getActionCode());
+                System.out.println(rq.getParams());
+
+                wiseSayingController.remove();
+
+
+            } else if (cmd.equals("add")) {
                 wiseSayingController.add();
             } else if (cmd.equals("list")) {
                 wiseSayingController.list();
