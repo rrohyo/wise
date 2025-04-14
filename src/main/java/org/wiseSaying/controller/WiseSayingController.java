@@ -48,12 +48,28 @@ public class WiseSayingController {
 
         int id = rq.getIntParams("id", -1);
 
-        if (id == -1) { 
+        if (id == -1) {
             System.out.println("id(정수)를 제대로 입력해주세요.");
         }
 
-        System.out.printf("%d번 명언이 삭제되었습니다.\n", id);
-
-
+        WiseSaying removeTargetWiseSaying = findById(id);
+        if(removeTargetWiseSaying != null){
+            wiseSayingList.remove(removeTargetWiseSaying);
+            System.out.printf("%d번 명언이 삭제되었습니다.\n", id);
+        }
+        else{
+            System.out.printf("%d번 명언은 존재하지 않습니다.\n", id);
+        }
     }
+
+    public WiseSaying findById(int id){
+        for(WiseSaying wiseSaying : wiseSayingList){
+            if(id == wiseSaying.getId()){
+                return wiseSaying;
+            }
+        }
+        return null;
+    }
+
+
 }
